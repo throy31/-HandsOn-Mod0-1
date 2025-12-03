@@ -1,111 +1,59 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Raleway:wght@400;500;700&display=swap');
-
-:root {
-    --candy-pink: #ff6ec7;
-    --candy-purple: #9b59b6;
-    --candy-orange: #ff944d;
-    --candy-yellow: #ffe066;
-    --candy-green: #3ae374;
-    --candy-blue: #48dbfb;
-    --dark-bg: #330033;
-    --cream: #fff0d9;
+:root{
+    --bg:#f7efe8;
+    --accent:#6b3f2d;
+    --muted:#8b6b5a;
+    --table-bg:#ffffff;
+    --highlight:#ffe8c4;
 }
 
-html, body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Raleway', sans-serif;
-    background: linear-gradient(180deg, var(--candy-purple), var(--candy-pink), var(--candy-orange));
-    min-height: 100vh;
-    color: var(--cream);
-    overflow-x: hidden;
-    text-align: center;
+html,body{
+    margin:0;
+    padding:0;
+    font-family: "Raleway", sans-serif;
+    background:var(--bg);
+    color:var(--accent);
+    text-align:center;
 }
 
-h1 {
-    font-family: 'Fredoka One', cursive;
-    font-size: 3em;
-    margin-top: 20px;
-    color: var(--candy-yellow);
-    text-shadow: 3px 3px 0 var(--candy-purple), -2px -2px 0 var(--candy-pink);
-    animation: bounce 2s infinite;
-}
-h2, h3, h4 {
-    font-family: 'Fredoka One', cursive;
-    margin: 10px;
-    color: var(--candy-blue);
-    text-shadow: 1px 1px 0 var(--candy-purple);
+h4{font-family: "Fredoka One", cursive; margin-top:18px;}
+
+.stock-table{
+    width:90%;
+    margin:16px auto;
+    border-collapse:collapse;
+    background:var(--table-bg);
+    box-shadow:0 6px 18px rgba(0,0,0,0.06);
+    border-radius:8px;
+    overflow:hidden;
 }
 
-h4 {
-    font-size: 1.3em;
-    color: var(--candy-green);
+.stock-table thead tr{background:linear-gradient(90deg,var(--accent),var(--muted)); color:#fff;}
+.stock-table th, .stock-table td{padding:12px 10px; border-bottom:1px solid #eee; text-align:center;}
+.prod-name{text-align:left; padding-left:18px; font-weight:600;}
+.stock-level{font-weight:700; color:var(--accent);}
+.reorder{font-weight:700;}
+.reorder:empty{color:var(--muted);}
+
+.value, .tax{font-feature-settings: "tnum"; font-variant-numeric:tabular-nums;}
+
+.meta{color:var(--muted); margin-top:10px;}
+
+.nav{display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin:22px 0;}
+.nav a{background:var(--highlight); color:var(--accent); padding:10px 16px; border-radius:20px; text-decoration:none; font-weight:600;}
+
+.nav{
+    display:flex;
+    gap:10px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin:16px 0;
 }
 
-@keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
-}
-
-p {
-    margin: 8px auto;
-    width: 85%;
-    font-size: 1em;
-    line-height: 1.5em;
-    color: var(--cream);
-    text-align: center;
-}
-
-ul {
-    list-style: none;
-    padding-left: 0;
-    margin: 15px auto;
-    width: 80%;
-    text-align: center;
-}
-
-ul li {
-    background: linear-gradient(135deg, var(--candy-pink), var(--candy-orange));
-    margin: 6px auto;
-    padding: 10px 16px;
-    border-radius: 20px;
-    transition: transform 0.2s, box-shadow 0.2s;
-    font-weight: 500;
-    color: #fff;
-    cursor: default;
-    position: relative;
-}
-ul li::before {
-    content: "🍬 ";
-    font-size: 1.1em;
-}
-
-ul li:hover {
-    transform: scale(1.05) rotate(-2deg);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-}
-hr {
-    border: none;
-    height: 6px;
-    margin: 25px auto;
-    border-radius: 20px;
-    background: repeating-linear-gradient(
-        90deg,
-        var(--candy-yellow),
-        var(--candy-yellow) 10px,
-        var(--candy-pink) 10px,
-        var(--candy-pink) 20px
-    );
-    width: 80%;
-}
-
-.green { color: var(--candy-green) !important; }
-.orange { color: var(--candy-orange) !important; }
-.red { color: #ff3860 !important; }
-.winner { color: #ffe066; font-size: 1.3em; text-shadow: 1px 1px 0 #ff6ec7; }
-
-@media(max-width: 700px) {
-    h1 { font-size: 2.2em; }
-    h2, h3, h4 { font-size: 1em; }
-    p, li { font-size: 0.95em; width: 90%; }
+.nav a{
+    background:#ffe8c4;
+    color:#6b3f2d;
+    padding:10px 16px;
+    border-radius:20px;
+    text-decoration:none;
+    font-weight:600;
 }
